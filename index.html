@@ -30,8 +30,10 @@
             <nav>
                 <ul class="navigation">
                     <li class="nav-item"><a href="/acerca-de">Acerca de</a></li>
-                    <li class="nav-item"><a href="">Mis Proyectos</a></li>
-                    <li class="nav-item"><a href="">Contacto</a></li>
+                    <li class="nav-item">
+                        <a href="/proyectos">Mis Proyectos</a>
+                    </li>
+                    <li class="nav-item"><a href="/contacto">Contacto</a></li>
                 </ul>
             </nav>
         </header>
@@ -77,7 +79,11 @@
             <section>
                 <h2 class="header">Mis proyectos</h2>
                 <div class="carousel">
-                    <div class="arrow arrow-left"></div>
+                    <!-- this arrow is a visual element, the screen reader wont see/read it unless it has the aria-label -->
+                    <div
+                        class="arrow arrow-left"
+                        aria-label="Backward Button"
+                    ></div>
                     <div class="window">
                         <ul class="project-container">
                             <li>
@@ -107,7 +113,7 @@
                                     />
                                 </button>
                             </li>
-                            <li>
+                            <li aria-hidden="true">
                                 <button>
                                     <img
                                         src="/images/project4.png"
@@ -116,7 +122,7 @@
                                     />
                                 </button>
                             </li>
-                            <li>
+                            <li aria-hidden="true">
                                 <button>
                                     <img
                                         src="/images/project5.png"
@@ -127,22 +133,27 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="arrow arrow-right"></div>
+                    <!-- this arrow is a visual element, the screen reader wont see/read it unless it has the aria-label -->
+                    <div
+                        class="arrow arrow-right"
+                        aria-label="Forward Button"
+                    ></div>
                 </div>
             </section>
         </main>
 
-        <div class="contact-section">
-            <div class="header">Contacto</div>
-            <div class="form-container">
-                Nombre<input type="text" /> <br />
-                Correo<input type="text" /> <br />
+        <footer class="contact-section">
+            <h2 class="header">Contacto</h2>
+            <form class="form-container">
+                Nombre<input type="text" aria-label="nombre" /> <br />
+                Correo<input type="text" aria-label="Correo" /> <br />
                 <div class="message-input">
-                    Mensaje<input type="text" /> <br />
+                    Mensaje<input type="text" aria-label="mensaje" /> <br />
                 </div>
-                <div class="send-button">Enviar</div>
-            </div>
-        </div>
+                <button class="send-button">Enviar</button>
+            </form>
+        </footer>
+
         <div class="notification">El formulario fue enviado sin errores</div>
         <div class="modal-container">
             <div class="modal">
